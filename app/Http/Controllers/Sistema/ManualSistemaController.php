@@ -23,6 +23,13 @@ class ManualSistemaController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate(['
+            name' => 'required',
+            'slug'=>'required',
+            'body'=>'required',
+            'category_id' => 'required'
+        ]);
+
         Document::create($request->all());
        
         return redirect()->route('manual.sistema.index')->with('info','El documento se creo con exito');

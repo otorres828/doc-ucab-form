@@ -33,10 +33,10 @@
         });
     </script>
     {{-- CKEDITOR. 5 --}}
-    <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script> --}}
     {{-- <link rel="stylesheet" href="{{ asset('vendor/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css') }}">
     <script src="{{ asset('vendor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js') }}"></script> --}}
-    <script>
+    {{-- <script>
         function init(){
             if(document.querySelector('#body')){
                 var config ={
@@ -57,6 +57,19 @@
         //     } 
         // );
 
+    </script> --}}
+    <script src="{{ asset('vendor\ckeditor5-build-classic\build/ckeditor.js') }}"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#body' ),{
+                mediaEmbed: {
+                                previewsInData:true
+                            },
+            },)
+            .catch( error => {
+                console.error( error );
+            } 
+        );
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
