@@ -65,6 +65,7 @@
                 mediaEmbed: {
                                 previewsInData:true
                             },
+                            
             },)
             .catch( error => {
                 console.error( error );
