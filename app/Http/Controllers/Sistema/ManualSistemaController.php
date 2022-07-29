@@ -23,8 +23,8 @@ class ManualSistemaController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate(['
-            name' => 'required',
+        $request->validate([
+            'name' => 'required',
             'slug'=>'required',
             'body'=>'required',
             'category_id' => 'required'
