@@ -1,5 +1,5 @@
 <div>
-        @include('partiels.usuario')
+    @include('partiels.usuario')
         
     @push('js')
         <script >
@@ -18,7 +18,11 @@
             });
         </script>
         {{-- CKEDITOR. 5 --}}
-        <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+        <script src="{{ asset('vendor\ckeditor5-build-classic\build/ckeditor.js') }}"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+       
+        {{-- <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script> --}}
         <script>
             class MyUploadAdapter {
                 constructor( loader ) {
@@ -82,23 +86,7 @@
                     return new MyUploadAdapter( loader );
                 };
             }
-
-            // ClassicEditor
-            //     .create( document.querySelector( '#body' ),{
-            //         extraPlugins: [ MyCustomUploadAdapterPlugin ],
-            //         mediaEmbed: {
-            //                         previewsInData:true
-            //                     },
-            //     },)
-            //     .catch( error => {
-            //         console.error( error );
-            //     } 
-            // );
             
-            </script>
-            <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        </script>
     @endpush
 </div>
